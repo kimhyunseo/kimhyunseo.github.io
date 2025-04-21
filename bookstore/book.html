@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>북 로테이트</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 800px;
+      }
+      .book {
+        transition: all 1s ease;
+        transform: rotateY(0);
+        display: flex;
+        transform-style: preserve-3d;
+        cursor: url(image/Layer.png), auto;
+        transform-origin: center;
+      }
+      .book:hover {
+        transform: rotateY(40deg);
+      }
+      .front, .back {
+        width: 200px;
+        height: 300px;
+        background-image: url(image/XL.jfif);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .back{
+        background-image: url(image/xl3.jpg);
+        transform: rotateY(-180deg) translateZ(50px) translateX(-250px);
+      }
+      .side {
+        width: 50px;
+        height: 300px;
+        background-image: url(image/XL2.jpg);
+        background-size: cover;
+        background-position: top;
+        transform: rotateY(-90deg);
+        transform-origin: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="book">
+      <div class="back"></div>
+      <div class="side"></div>
+      <div class="front"></div>
+    </div>
+  </body>
+</html>

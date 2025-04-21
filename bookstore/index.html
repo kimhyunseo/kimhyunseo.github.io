@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="cover">
+        <div class="book">
+          <div class="page">
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+          <div class="side"></div>
+        </div>
+      </div>
+      <div class="text">
+        <div class="imfo">
+          <div class="sub">
+            <p class="border-box">소득공제</p>
+          </div>
+          <div class="title">
+            <p class="border-box2">만화</p>
+            <h2>먼작귀 1</h2>
+            <h3>먼가 작고 귀여운 녀석</h3>
+            <span>[초판 종료]</span>
+          </div>
+          <div class="writer">
+            <p>
+              나가노 글그림 | 미우(대원) | 2022년 06월 27일 | 원서 :
+              ちいかわなんか小さくてかわいいやつ
+            </p>
+          </div>
+          <div class="star">
+            <span>★★★★★</span>
+            <p>9.7</p>
+            <p class="border-box">▽</p>
+            <p>
+              회원리뷰(<span>25건</span>) | 판매지수 5,382
+              <span class="border-box"> ? </span> 베스트 코믹 31위 |
+              만화/라이트노벨 top100 2주
+            </p>
+          </div>
+        </div>
+        <table class="price">
+          <tr>
+            <th>정가</th>
+            <td>12000원</td>
+          </tr>
+          <tr>
+            <th>판매가</th>
+            <td>10,800<span>원</span><span>(10% 할인)</span></td>
+          </tr>
+          <tr>
+            <th rowspan="2">
+              YES포인트
+              <p class="border-box">?</p>
+            </th>
+            <td>600원 (5% 적립)</td>
+          </tr>
+          <tr>
+            <td>
+              5만원이상 구매 시 2천원 추가적립
+              <span class="border-box"> ? </span>
+            </td>
+          </tr>
+        </table>
+        <table class="etc">
+          <tr>
+            <th>결제혜택</th>
+            <td>
+              카드/간편결제 혜택을 확인하세요
+              <span class="border-box"> ? </span>
+            </td>
+          </tr>
+        </table>
+        <table class="del">
+          <tr>
+            <th>배송안내<span class="border-box"> ▷ </span></th>
+            <td>서울특별시 영등포구 은행로 11(여의도동,일신빌딩)</td>
+          </tr>
+        </table>
+        <div class="del2">
+          <span>당일배송</span>
+          <span>19시까지 주문하면 <span>오늘 (4/21, 월) 도착 예정</span></span>
+        </div>
+        <p>
+          배송비 : 유료 (도서 15,000원 이상 무료) 배송비 안내
+          <span class="border-box"> ? </span>
+        </p>
+      </div>
+    </div>
+    <script>
+      const book = document.querySelector(".book");
+      book.addEventListener("click", () => {
+        book.classList.toggle("flipped");
+      });
+    </script>
+  </body>
+</html>

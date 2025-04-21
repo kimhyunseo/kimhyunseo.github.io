@@ -1,0 +1,262 @@
+@charset "utf-8";
+
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* commom */
+.border-box{
+    border: 1px solid #666;
+    color: #666;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    width: fit-content;
+    font-size: 0.8rem;
+    border-radius: 2px;
+    padding: 2px 8px;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 3px;
+}
+
+.border-box2{
+    background-color: #666;
+    border: 1px solid #1d1d1d;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    width: fit-content;
+    font-size: 0.8rem;
+    border-radius: 2px;
+    padding: 2px 5px;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 3px;
+}
+/* ************************************ */
+
+.wrap{
+    display: flex;
+    margin-top: 150px;
+    justify-content: center;
+    flex-direction: row;
+    height: 100%;
+    position: relative;
+
+}
+
+/* 책 */
+.wrap > .cover{
+    perspective: 1000px;
+}
+.wrap > .cover > .book{
+    width: 400px;
+    height: 570px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.5s ease;
+    cursor: url(image/Layer.png), auto;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+    
+}
+.wrap > .cover >  .book > .page{
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+.wrap > .cover >  .book > .page > div{
+    width: 400px;
+    height: 570px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}
+.wrap > .cover >  .book > .front,.back,.side{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.wrap > .cover >  .book > .page > .front{
+    background-image: url(image/XL.jfif);
+    background-size: cover;
+    /* transform: rotateY(40deg); */
+
+}
+.wrap > .cover >  .book > .page > .back{
+    background-image: url(image/xl3.jpg);   
+    background-size: cover;
+    transform: rotateY(180deg) translateZ(70px);
+}
+.wrap > .cover >  .book > .side{
+    background-image: url(image/XL2.jpg);
+    background-size: cover;
+    width: 70px;
+    height: 570px;
+    transform: rotateY(-90deg);
+    transform-origin: right;
+    left: -70px;
+    transform-style: preserve-3d;
+}
+
+/* 호버 처리 */
+.book:not(.flipped):hover{
+    transform: rotateY(40deg);
+}
+
+/* 플립 처리 */
+.flipped{
+    transform: rotateY(180deg);
+}
+
+/* 옆에 정보 */
+
+.wrap > .text{
+    width: 50%;
+    padding: 0 100px;
+    gap: 10px;
+}
+
+
+/* 제목 */
+.wrap > .text > .imfo > .title{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px 0;
+}
+.wrap > .text > .imfo > .title > h2{
+    font-size: 2rem;
+}
+.wrap > .text > .imfo > .title > h3{
+    font-size: 1.3rem;
+    color: #666;
+}
+.wrap > .text > .imfo > .title > span{
+    font-size: 0.8rem;
+    color: #6699cc;
+}
+
+/* 부가설명 area*/
+.wrap > .text > .imfo > .writer{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px 0;
+    color: #666;
+
+}
+
+
+/* 평점 star */
+.wrap > .text > .imfo > .star{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px 0;
+    color: #666;
+}
+.text > .imfo > .star > span:nth-of-type(1){
+    color: #6699cc;
+}
+.text > .imfo > .star > p > span:nth-of-type(1){
+    color: #6699cc;
+}
+.text > .imfo > .star > p:nth-of-type(1){
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: #1d1d1d;
+}
+
+/* 가격 table */
+table{ border-top: 1px solid #cccccc;
+    width: 100%;
+    margin: 20px 0;
+}
+th{
+    width: 150px;
+}
+th, td {
+    text-align: left; /* 가로 방향 왼쪽 정렬 */
+    vertical-align: top; /* 세로 방향 위쪽 정렬 */
+    padding: 10px 20px; /* 위, 아래, 왼쪽, 오른쪽 여백을 조정 */
+    margin: 10px;
+}
+
+/* 정가 12000원 */
+.price > tbody > tr:nth-of-type(1) > th{
+    color: #666;
+    font-weight: normal;
+}
+.price > tbody > tr:nth-of-type(1) > td{
+    color: #666;
+}
+
+/* 판매가 10800원 */
+.price > tbody > tr:nth-of-type(2) > th{
+    font-weight: 500;
+    color: #1d1d1d;
+}
+.price > tbody > tr:nth-of-type(2) > td{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #ff6666;
+}
+.price > tbody > tr:nth-of-type(2) > td > span:nth-child(1){
+    font-size: 1rem;
+}
+.price > tbody > tr:nth-of-type(2) > td > span:nth-child(2){
+    font-size: 1rem;
+    font-weight: lighter;
+}
+/* YES포인트 600원 / 5만원 */
+.price > tbody > tr:nth-of-type(3) > th{
+    color: #666;
+    font-weight: normal;
+}
+.price > tbody > tr:nth-of-type(3) > td{
+    color: #666;
+}
+.price > tbody > tr:nth-of-type(4) > td{
+    color: #666;
+}
+/* 결제혜택 */
+.etc > tbody > tr:nth-of-type(1) > th{
+    color: #666;
+    font-weight: normal;
+}
+.etc > tbody > tr:nth-of-type(1) > td{
+    color: #666;
+}
+/* 배송안내 */
+.del > tbody > tr:nth-of-type(1) > th{
+    color: #666;
+    font-weight: normal;
+}
+.del > tbody > tr:nth-of-type(1) > td{
+    color: #666;
+}
+.del2{
+    background-color: rgb(237, 245, 254);
+    padding: 15px 10px;
+}
+.del2 > span{
+    display: inline-block;
+}
+.del2 > span:nth-child(1){
+    background-color: rgb(238, 169, 0);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.del2 > span:nth-child(2) > span{
+    font-weight: bolder;
+}
+.text > p:nth-last-child(1){
+    color: #666;
+}
