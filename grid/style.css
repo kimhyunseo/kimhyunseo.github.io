@@ -6,12 +6,55 @@ body{
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    perspective: 900px;
+    background-color: #222;
+}
+
+/* nav */
+input[id=menu1]:checked ~ main > #box1,
+input[id=menu2]:checked ~ main > #box2,
+input[id=menu3]:checked ~ main > #box3{
+    opacity: 1;
+}
+input[id=menu1]:checked ~ main > #box1 > p,
+input[id=menu2]:checked ~ main > #box2 > p,
+input[id=menu3]:checked ~ main > #box3 > p{
+    transform: rotateY(0deg);
+}
+nav{
+    width: 150px;
+    height: 100%;
+    position: absolute;
+    background-color: #ddd;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transform: rotateY(120deg);
+    transform-origin: left center;
+    opacity: 0;
+    transition: all 0.5s;
+}
+nav > img{
+    display: block;
+    width: 60%;
+    margin: 7rem auto;
+}
+nav > ul > li{
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.5rem;
+}
+nav > ul > li > label{
+    cursor: pointer;
 }
 
 /* main */
 main{
     height: 100%;
     position: relative;
+    transform: rotateY(0deg);
+    transform-origin: right center;
+    transition: all 0.5s;
 }
 main > section{
     width: 100%;
@@ -20,8 +63,10 @@ main > section{
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 0;
 }
 section#box1{
+    z-index: 1;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
 }
@@ -31,26 +76,37 @@ section#box2{
 }
 
 /* menu */
+input{
+    display: none;
+}
+input[id=check-icon]:checked ~ nav{
+    transform: rotateY(15deg);
+    opacity: 1;
+}
+input[id=check-icon]:checked ~ main{
+    transform: rotateY(-10deg);
+}
+
 #menu-icon{
-    z-index: 1;
+    z-index: 10;
     position: fixed;
     top: 0;
     left: 0;
     color: #eee;
     font-size: 2rem;
-    padding: 20px;
+    margin: 20px;
     cursor: pointer;
-    animation: menu 0.4s ease infinite alternate;
+    animation: icon-move 0.4s ease infinite alternate;
 }
 
-@keyframes menu {
+@keyframes icon-move {
     0%{
         transform: scale(1);
-        opacity: 100%;
+        color: #eee;
     }
     100%{
         transform: scale(1.5);
-        opacity: 50%;
+        color: #444;
     }
 }
 
@@ -67,6 +123,8 @@ main > section > p{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transform: rotateY(180deg);
+    transition: all 0.5s;
 }
 
 section#box1 > p:nth-of-type(1){
@@ -80,6 +138,8 @@ section#box1 > p:nth-of-type(2){
 }
 section#box1 > p:nth-of-type(5){
     background-image: url(images/m3.jpg);
+    background-size: contain;
+    background-position: left;
 }
 section#box1 > p:nth-of-type(6){
     grid-column: 3/5;
