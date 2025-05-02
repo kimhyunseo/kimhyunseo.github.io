@@ -1,0 +1,566 @@
+$primary-color: #cf1b70;
+$secondary-color: #f8ac1a;
+$dark-color: #1a0026;
+$white-color: #eee;
+$gray-color: #333;
+$lightgray-color: #A7A7A7;
+$brightgray-color: #c0c0c0;
+
+$large-font: 1.5rem;
+$normal-font: 1rem;
+$small-font: 0.9rem;
+
+// 버튼 호버처리
+
+@mixin btn-style($darkcolor) {
+    display: block;
+    padding: 20px 35px;
+    font-size: $normal-font;
+    background: none;
+    border: 2px solid $brightgray-color;
+    color: $brightgray-color;
+    border-radius: 10px;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: $primary-color;
+        z-index: -1;
+        transition: all 0.4s ease;
+    }
+
+    &:hover {
+        border: 2px solid $primary-color;
+
+        &::after {
+            width: 100%;
+            left: 100;
+        }
+    }
+}
+
+// 사이즈
+
+@mixin respond($breakpoint) {
+    @if $breakpoint ==mobile {
+        @media screen and (max-width: 768px) {
+            @content;
+        }
+    }
+}
+
+///////
+
+body {
+    background-color: #1a0026;
+    color: #eee;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 80px;
+
+    @include respond(mobile) {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h1 {
+        background-image: url(../image/logo1.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 10px;
+        width: 120px;
+        height: 60px;
+    }
+
+    i {
+        font-size: $large-font;
+        padding: 2rem;
+        cursor: pointer;
+        display: none !important;
+
+        @include respond(mobile) {
+            display: inline-block !important;
+        }
+    }
+
+    nav {
+        @include respond(mobile) {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            cursor: pointer;
+            padding: 20px 0;
+        }
+    }
+
+    .left {
+        ul {
+            font-size: $large-font;
+            gap: 70px;
+        }
+    }
+
+    .right {
+        font-size: 1.2rem;
+
+        ul {
+            li {
+                padding: 0 20px;
+                border-right: 3px solid $brightgray-color;
+
+                &:last-child {
+                    border: none;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+#banner {
+    height: 95%;
+    width: 100%;
+    background-image: url(../image/banner.png);
+    background-position: center;
+    position: relative;
+
+    @include respond(mobile) {
+        height: 50%;
+        background-position: center;
+        background-size: cover;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        /* 블러 높이 조정 */
+        background: linear-gradient(to bottom, transparent, #1b0023);
+
+        /* 배경과 자연스러운 색으로 */
+        @include respond(mobile) {
+            height: 20px;
+        }
+    }
+}
+
+// 경기 날짜
+#game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10rem auto;
+
+    @include respond(mobile) {
+        margin: 5rem auto;
+    }
+
+    .item {
+        background-color: $white-color;
+        border-radius: 15px;
+        width: 1000px;
+        height: fit-content;
+        color: $dark-color;
+        text-align: center;
+        margin: 0 2rem;
+        @include respond(mobile) {
+            width: 100%;
+            margin: 1rem;
+        }
+
+        .day {
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 0;
+
+            span {
+                padding: 20px 40px;
+                font-size: $large-font;
+                font-weight: bolder;
+                cursor: pointer;
+            }
+
+            div {
+                p {
+                    text-align: center;
+
+                    &:nth-child(1) {
+                        font-size: 2.25rem;
+                        font-weight: bold;
+                    }
+
+                    &:nth-child(2) {
+                        color: $lightgray-color;
+                        font-size: $large-font;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .team {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 10px auto;
+            width: 90%;
+            padding-top: 20px;
+            border-top: 3px solid $brightgray-color;
+
+            .card {
+                img {
+                    width: 70%;
+                    @include respond(mobile) {
+                        width: 90%;
+                    }
+                }
+
+                h2 {
+                    text-align: center;
+
+                    @include respond(mobile) {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            span {
+                font-size: 8rem;
+                color: $brightgray-color;
+
+                @include respond(mobile) {
+                    font-size: 5rem;
+                }
+            }
+        }
+
+        button {
+            display: inline-block;
+            font-size: 1.2rem;
+            padding: 5px 20px;
+            margin: 2rem;
+            border: none;
+            background-color: $lightgray-color;
+            color: $white-color;
+            border-radius: 10px;
+            cursor: pointer;
+            @include respond(mobile) {
+                font-size: 1rem;
+                margin: 1rem;
+            }
+        }
+    }
+}
+
+// 갤러리
+#gallery {
+    .photo {
+        display: flex;
+        width: 100%;
+        height: 650px;
+        overflow: hidden;
+        gap: 2.5rem;
+
+        @include respond(mobile){
+            display: grid;
+            width: fit-content;
+            height: fit-content;
+            grid-template-columns: repeat(2,2fr);
+            margin: 1rem;
+            gap: 1rem;
+        }
+        img {
+            width: 500px;
+            height: 500px;
+            background-color: #333;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+            aspect-ratio: 1/1;
+
+            &:nth-child(even) {
+                margin-top: 100px;
+                margin-bottom: 20px;
+            }
+
+            @include respond(mobile){
+                width: 100%;
+                height: 100%;
+                &:nth-child(even) {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    button {
+        @include btn-style($dark-color)
+    }
+}
+
+// news
+#news {
+    margin: 10rem 0;
+
+    .card {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8rem;
+        gap: 2rem;
+        @include respond(mobile){
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item {
+            width: 500px;
+            @include respond(mobile){
+                width: 90%;
+                margin: 1rem ;
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            p {
+                margin: 5px 0;
+
+                &:nth-of-type(1) {
+                    font-size: $small-font;
+                }
+
+                &:nth-of-type(2) {
+                    color: $lightgray-color;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden
+                }
+
+                &:nth-of-type(3) {
+                    display: inline-block;
+                    color: $lightgray-color;
+                    font-size: $small-font;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid $lightgray-color;
+                    cursor: pointer;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
+    button {
+        @include btn-style($dark-color)
+    }
+}
+
+// MD
+#md {
+    margin-bottom: 5rem;
+
+    .list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 800px;
+        margin: 5rem auto;
+
+        @include respond(mobile){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .card {
+            width: 400px;
+            height: 400px;
+            background-color: $gray-color;
+            border-radius: 10px;
+            position: relative;
+
+            .label {
+                position: absolute;
+                background-color: $secondary-color;
+                border-radius: 5px;
+                width: fit-content;
+                padding: 5px 20px;
+                top: 20px;
+                left: 20px;
+                font-weight: bolder;
+            }
+
+            .wrap {
+                position: absolute;
+                top: 30px;
+
+                img {
+                    width: 70%;
+                    display: block;
+                    margin: 1rem auto;
+                }
+
+                p {
+                    text-align: center;
+                    font-size: $normal-font;
+                    font-weight: bold;
+                    padding: 10px;
+                }
+            }
+
+            &:nth-child(3) {
+                .label {
+                    background-color: $primary-color;
+                }
+            }
+
+            &:nth-child(4) {
+                .label {
+                    background-color: $dark-color;
+                }
+            }
+        }
+    }
+
+    button {
+        @include btn-style($dark-color)
+    }
+}
+
+// footer
+
+footer {
+    height: 250px;
+    background-color: #0D0014;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(mobile){
+        height: 230px;
+    }
+
+    .wrap {
+        color: $gray-color;
+        @include respond(mobile){
+            font-size: 0.8rem;
+        }
+        .top {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-end;
+            margin: 20px 0;
+            margin-left: 20px;
+            @include respond(mobile){
+                margin: 20px 0;
+                margin-bottom: 2rem;
+            }
+
+            h3 {
+                background-image: url(../image/logo-f.png);
+                width: 170px;
+                height: 70px;
+                background-position: center;
+                background-size: cover;
+                margin-right: 20px;
+            }
+
+            .sns {
+                display: flex;
+                gap: 2rem;
+
+                a {
+                    img {
+                        width: 50px;
+                    }
+                }
+            }
+        }
+
+        .middle {
+            display: flex;
+
+            p {
+                padding: 2px 20px;
+                border-right: 1px solid $gray-color;
+
+                &:nth-child(1) {
+                    color: $lightgray-color;
+                    font-weight: bold;
+                }
+
+                &:last-child {
+                    border: none;
+                }
+                @include respond(mobile){
+                    padding: 2px 15px;
+                }
+            }
+        }
+
+        .bottom {
+            .up {
+                display: flex;
+
+                p {
+                    padding: 2px 20px;
+                    border-right: 1px solid $gray-color;
+
+                    &:last-child {
+                        border: none;
+                    }
+                    @include respond(mobile){
+                        padding: 2px 15px;
+                    }
+                }
+            }
+
+            .down {
+                display: flex;
+
+                @include respond(mobile){
+                    display: none;
+                }
+
+                p {
+                    padding: 2px 20px;
+                    border-right: 1px solid $gray-color;
+
+                    &:last-child {
+                        border: none;
+                    }
+                    
+                }
+            }
+
+            p {
+                padding: 2px 20px;
+                @include respond(mobile){
+                    padding: 2px 15px;
+                }
+            }
+        }
+    }
+}
