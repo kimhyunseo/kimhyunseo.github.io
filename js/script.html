@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+const orderCoffe = ()=>{
+    const order = prompt("커피를 주문해주세요.")
+    if(order == "아메리카노"){
+        alert("아메리카노의 가격은 2000원입니다.");
+    }else if(order == "라떼"){
+        alert("라떼의 가격은 2500원입니다.");
+    }else if(order == "카푸치노"){
+        alert("카푸치노의 가격은 3000원입니다.");
+    } else {
+        alert("없는 메뉴입니다.");
+    }
+};
+orderCoffe();
+</script>
+</body>
+</html>
