@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* strat 화면 */
+
+div.start{
+    width: 430px;
+    height: 932px;
+    background-color: #8CCFD7;
+    border-radius: 10px;
+    padding: 1rem;
+    position: relative;
+}
+
+div.start > h1 > img{
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+div.start > div.pop{
+    margin: 0 auto;
+    margin-top: 5rem;
+    text-align: center;
+    width: 80%;
+}
+div.start > div.pop > p{
+    font-size: 2rem;
+    background-color: #FFF9E4;
+    color: #837156;
+    padding: 1.8rem;
+    border-radius: 5px;
+}
+div.start > div.pop > p > span{
+    color: #EB6661;
+    font-family: 'MaplestoryOTFBold';
+}
+div.start > div.pop > img{
+    margin-top: 2rem;
+}
+div.start> div.wrap{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+    bottom: 4rem;
+    left: 0;
+}
+div.start> div.wrap > input{
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    width: 70%;
+}
+div.start> div.wrap > button {
+    font-size: 1rem;
+    font-family: 'MaplestoryOTFBold';
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #FCBEC5;
+    border: none;
+    color: #837156;
+}
+
+
+/* in game 화면 */
+
+div.view{
+    width: 430px;
+    height: 932px;
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    border-radius: 10px;
+    padding: 1rem;
+    position: relative;
+}
+
+div.view > h2 > img{
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    /* margin-top: 3rem; */
+}
+
+div.view> div.wrap{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+    bottom: 4rem;
+    left: 0;
+}
+div.view> div.wrap > input{
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    width: 70%;
+}
+div.view> div.wrap > button {
+    font-size: 1rem;
+    font-family: 'MaplestoryOTFBold';
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #FCBEC5;
+    border: none;
+    color: #837156;
+}
+div.view> ul > li{
+    display: flex;
+    height: 50px;
+    margin: 30px 0;
+}
+div.view> ul > li >p{
+    font-size: 1.5rem;
+    color: #837156;
+    background-color: #FEEC9E;
+    width: 100%;
+    margin: 0 10px;
+    border-radius: 5px;
+    padding: 10px;
+    line-height: 35px;
+}
+div.view> ul > li > img{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background-color: #FFF9E4;
+    border: 3px solid #E6DDC6;
+    border-radius: 50%;
+    padding: 10px;
+}
