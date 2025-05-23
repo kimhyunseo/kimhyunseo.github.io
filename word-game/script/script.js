@@ -30,7 +30,7 @@ const createLi = (keyword) => {
   $li.appendChild($img);
   $li.appendChild($p);
 
-  if ($list.children.length >= 8) {
+  if ($list.children.length >= 5) {
     $list.removeChild($list.firstElementChild);
   }
   $list.appendChild($li);
