@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider{
+    width: 1800px;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+.img-list{
+    width: 10800px;
+    height: 100vh;
+    display: flex;
+}
+.button{
+    cursor: pointer;
+}
+.play{
+    width: 4rem;
+    position: absolute;
+    right: 0;
+    padding: 1rem;
+    z-index: 10;
+}
+.btn-wrap{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    z-index: 10;
+}
+.btn-wrap>img{
+    width: 5rem;
+    padding: 1rem;
+}
+.title{
+    display: flex;
+    padding: 1.5rem;
+}
+.title > img{
+    width: 8rem;
+    object-fit: contain;
+}
+.title > h1{
+    font-weight: 900;
+    font-size: 5rem;
+    padding: 0 1.5rem;
+}
+.cat{
+    width: 1800px;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    transform: translateY(-50px);
+}
+.info .top{
+    display: flex;
+    justify-content: space-between;
+}
+.info .top > p{
+    font-weight: bold;
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+.info > .text{
+    width: 800px;
+}
+.info > .text > p{
+    font-size: 2.8rem;
+    word-break: keep-all;
+}
+.info > img{
+    height: 600px;
+    margin: 0 1em;
+}
+.menu-list{
+    display: flex;
+    position: absolute;
+    width: 30rem;
+    justify-content: space-between;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.menu-list > li > img{
+    width: 5rem;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.menu-list li.active img {
+  transform: scale(1.1); /* 예시: 살짝 커지게 */
+}
