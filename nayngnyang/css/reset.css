@@ -1,27 +1,24 @@
 @charset "utf-8";
 
-/* Regular */
 @font-face {
-  font-family: "CookieRun";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff")
-    format("woff");
+  font-family: 'CookieRun';
+  src: url("../fonts/CookieRun\ Regular.ttf") format('woff');
   font-weight: 400;
+  font-style: normal;
 }
 
-/* Bold */
 @font-face {
-  font-family: "CookieRun";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2101@1.0/CookieRun-Bold.woff")
-    format("woff");
+  font-family: 'CookieRun';
+  src: url("../fonts/CookieRun\ Bold.ttf") format('woff');
   font-weight: 700;
+  font-style: normal;
 }
 
-/* Black */
 @font-face {
-  font-family: "CookieRun";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2101@1.0/CookieRun-Black.woff")
-    format("woff");
+  font-family: 'CookieRun';
+  src: url("../fonts/CookieRun\ Black.ttf") format('woff');
   font-weight: 900;
+  font-style: normal;
 }
 
 * {
@@ -39,7 +36,7 @@ li {
 }
 body {
   height: 100vh;
-  font-family: "CookieRun";
+  font-family: 'CookieRun', sans-serif;
   background-color: #eee;
   color: #441915;
 }

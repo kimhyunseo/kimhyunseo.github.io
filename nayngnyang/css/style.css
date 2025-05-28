@@ -72,7 +72,7 @@ body{
     justify-content: space-between;
 }
 .info .top > p{
-    font-weight: bold;
+    font-weight: 700;
     font-size: 4rem;
     margin-bottom: 20px;
 }
