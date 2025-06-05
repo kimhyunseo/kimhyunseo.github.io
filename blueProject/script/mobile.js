@@ -1,3 +1,4 @@
+(function(){
 //header
 
 gsap.from("nav > .title > *", {
@@ -10,8 +11,8 @@ gsap.from("nav > .title > *", {
 });
 
 // 위에서 아래로 이동 1번 화살표 실행 2번 화살표 실행
-const tl = gsap.timeline({ repeat: -1 });
-tl.to(".arrow > p", {
+const tl3 = gsap.timeline({ repeat: -1 });
+tl3.to(".arrow > p", {
   y: 10,
   opacity: 1,
   stagger: 0.2,
@@ -61,13 +62,7 @@ $keywordList.forEach((elem, idx) => {
     }
   );
 });
-// const tl2 = gsap.timeline({ repeat: -1, yoyo: true });
-// tl2.to($keywordList, {
-//   x: (i) => (i === 1 ? 20 : -20),
-//   duration: 1.5,
-//   ease: "sine.inOut",
-//   stagger: { each: 0.2 },
-// });
+
 
 //project 영역의 .item들은 아래에서 올라오면서 보이도록
 const $project = document.querySelectorAll("#projects > .project-wrap > ul");
@@ -149,7 +144,6 @@ gsap.fromTo(
       start: "top 60%",
       end: "bottom bottom",
       scrub: true,
-      markers: true,
       toggleActions: "play none none none",
     },
   }
@@ -227,3 +221,5 @@ gsap.fromTo(".links > li",{
     },
   }
 );
+
+})();
