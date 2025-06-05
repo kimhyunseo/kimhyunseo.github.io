@@ -311,7 +311,7 @@ section#about {
 }
 .item-list > .item > .item-img {
   width: 100%;
-  aspect-ratio: 1/0.6;
+  aspect-ratio: 1/0.5;
   background-color: #888;
 }
 .item-list > .item > .item-detail > li {
