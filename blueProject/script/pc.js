@@ -83,22 +83,83 @@ $keywordList.forEach((elem, idx) => {
   );
 });
 
+// project 이동 gsap 애니
+const fromTop = (elem, posY) => {
+  gsap.from(elem, {
+    opacity: 0,
+    duration: 1,
+    y: 200,
+    scrollTrigger: {
+      trigger: elem,
+      start: `top ${posY}%`,
+      end: "top 40%",
+      scrub: true,
+    },
+  });
+};
+
 //project 안에 card item을 계단형으로 애니 처리
 const $project = document.querySelectorAll("#projects > .normal");
-$project.forEach((article)=>{
+$project.forEach((article) => {
   const $item = article.querySelectorAll(".item");
-  $item.forEach((item,idx)=>{
-    let posY = 90 - idx*15;
-    gsap.from(item,{
-      opacity: 0,
-      duration: 1,
-      y:200,
-      scrollTrigger: {
-        trigger: item,
-        start: `top ${posY}%`,
-        end: "top 40%",
-        scrub: true
-      }
-    });
+  $item.forEach((item, idx) => {
+    let posY = 90 - idx * 15;
+    fromTop(item, posY);
   });
 });
+
+const $practice = document.querySelectorAll("#projects > .practice .item");
+$practice.forEach((item, idx) => {
+  let posY = 70 - idx * 4;
+  fromTop(item, posY);
+});
+
+//skills 에서 h2 태그는 커진 상태에서 작아지면서 안 보이게
+gsap.to("#skills > h2", {
+  scale: 0.5,
+  duration: 2,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: "#skills",
+    start: "top 20%",
+    toggleActions: "play reverse play reverse",
+  },
+});
+
+//skills에서 li들은 작아진 상태에서 커지게 :stagger
+const $shape = document.querySelectorAll(".skill-item > li");
+gsap.from($shape, {
+  opacity: 0,
+  scale: 0.2,
+  duration: 0.5,
+  stagger: 0.2,
+  ease: "back.out",
+  scrollTrigger: {
+    trigger: "#skills",
+    start: "top 20%",
+    toggleActions: "play reverse play reverse",
+  },
+});
+
+// contact 안 글씨
+const $footer = document.querySelectorAll(".footer-wrap > *")
+gsap.from($footer,{
+  opacity: 0,
+  scale: 0.2,
+  duration: 0.5,
+  stagger: 0.1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "footer",
+    start: "top 20%",
+    toggleActions: "play reverse play reverse",
+  }
+});
+
+//홈을 누르면 제일 상단으로 올라가기
+const $home = document.querySelector("#logo");
+$home.addEventListener("click",()=>{
+  window.scrollTo({
+    top:0
+  });
+})
